@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Backend API for Blog",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "build": "tsc -p",
     "start": "node ./dist/index.js",
@@ -17,6 +17,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "nodemon": "^3.0.1",
+    "pg": "^8.11.3",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {
