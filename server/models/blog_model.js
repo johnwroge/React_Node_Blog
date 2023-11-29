@@ -8,8 +8,8 @@ const pool = new Pool({
 });
 
 module.exports = {
-    query: (text: any, params: any, callback: any) => {
-        console.log(`***** Executed Query *******`)
-        return pool.query(text, params, callback)
+    query: (text, params, callback) => {
+        console.log(`***** Executed Query *******`);
+        return pool.query(text, params, callback);
     }
-}
+};
