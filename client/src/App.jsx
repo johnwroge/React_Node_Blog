@@ -5,7 +5,7 @@ import './App.css'
 function App() {
   return (
     <>
-      <h1> This will be a title to the blog</h1>
+      <h1> Big O</h1>
       <Login/>
     </>
   )
