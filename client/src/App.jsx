@@ -1,12 +1,17 @@
 import { useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+
 import Login from './components/login'
 import './App.css'
+import Navbar from './components/navbar'
 
 function App() {
   return (
-    <>
-      <h1> Big O</h1>
-      <Login/>
+    <> 
+    <BrowserRouter> 
+      <Navbar />
+    </BrowserRouter>     
+      <h1> Blog</h1>
     </>
   )
 }
