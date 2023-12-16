@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom';
-import Hamburger from 'hamburger-react'
-import './navbar.css'
+import { NavLink, useNavigate } from 'react-router-dom';
+import Hamburger from 'hamburger-react';
+import './navbar.css';
+
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false)
 
-
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar)
   }
+  const navigate = useNavigate();
 
   return (
     <nav className="navbar">
@@ -36,7 +37,7 @@ const Navbar = () => {
               <NavLink to="/about">About</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink to="/login" >Login</NavLink>
             </li>
           </ul>
         </div>
