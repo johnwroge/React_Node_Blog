@@ -1,0 +1,28 @@
+.PostContainer {
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    /* justify-content: space-around; */
+  }
+
+.Post {
+    max-width: 100%; /* Allow the post to take up the full width */
+    width: auto; /* Allow the width to adjust based on content */
+    height: auto; /* Allow the height to adjust based on content */
+    margin: 8px;
+    margin-right: 16px; /* Margin between posts */
+    background-color: #ffffff; /* Whitish color */
+    border: 1px solid #e0e0e0; /* Light border color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+    padding: 16px; /* Padding inside the box */
+  }
+  
+  .Post h3 {
+    margin-bottom: 8px; 
+  }
+  
+  .Post p {
+    margin-bottom: 8px; 
+  }
+  

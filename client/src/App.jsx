@@ -22,8 +22,6 @@ function App() {
         </Routes>
     </BrowserRouter>     
 
-
-      <h1> Blog</h1>
     </>
   )
 }
