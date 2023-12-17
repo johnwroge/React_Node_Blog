@@ -14,6 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 dotenv.config();
 
+app.use(express.static(path.join(__dirname, '../client/public')));
+
+
 app.get('/', (req, res) => {
     return res.send('Response from Server!');
 });
