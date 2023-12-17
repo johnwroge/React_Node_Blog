@@ -1,8 +1,13 @@
 import React from 'react'
 
-const Post = () => {
+// eslint-disable-next-line react/prop-types
+const Post = ({title, date, body}) => {
   return (
-    <div>Post</div>
+    <div>
+        <h3> {title} </h3>
+        <p>{date}</p>
+        <p> {body} </p>
+    </div>
   )
 }
 
