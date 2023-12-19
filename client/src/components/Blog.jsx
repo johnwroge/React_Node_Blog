@@ -3,6 +3,8 @@ import { useState } from 'react'
 import Post from './Post'
 import './post.css'
 import Pic from '../assets/pic.png';
+import fetchPosts from './fetchPosts';
+import { useQuery } from '@tanstack/react-query'
 
 
 const Blog = () => {

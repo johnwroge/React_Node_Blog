@@ -14,12 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 dotenv.config();
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../../client/dist')));
 
 
-app.get('/', (req, res) => {
-    // return res.send();
-});
+
 
 app.get('/posts', postsController.getPosts, (req, res) => {
     return res.status(200).json(res.locals.posts);
