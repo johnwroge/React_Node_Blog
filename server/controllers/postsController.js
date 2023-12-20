@@ -56,6 +56,29 @@ const postsController = {
                 },
             });
         }
+    },
+
+    updatePost: async (req, res, next) => {
+        const { id, title, date, description } = req.body;
+    
+        try {
+            const updateQuery = 'UPDATE blog_posts SET title = $2, post_date = $3, description = $4 WHERE id = $1 RETURNING *';
+    
+            const result = await db.query(updateQuery, [id, title, date, description]);
+    
+            if (result.rows.length === 0) {
+                res.status(404).json({ message: 'Post not found' });
+            } else {
+                res.status(200).json({ message: 'Post updated successfully', post: result.rows[0] });
+            }
+        } catch (err) {
+            next({
+                log: `updatePost: Error: ${err}`,
+                message: {
+                    err: `Error occurred in updatePost. Check server logs for more details`,
+                },
+            });
+        }
     }
 };
 
