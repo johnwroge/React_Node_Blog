@@ -22,14 +22,31 @@ const postsController = {
         }
     },
 
+
+    createPost: async (req, res, next) => {
+        const { title, date, description } = req.body;
+    
+        try {
+            const insertQuery = 'INSERT INTO blog_posts (title, post_date, description) VALUES ($1, $2, $3) RETURNING *';
+            const result = await db.query(insertQuery, [title, date, description]);
+            res.status(201).json({ message: 'Post created successfully', post: result.rows[0] });
+        } catch (err) {
+            next({
+                log: `createPost: Error: ${err}`,
+                message: {
+                    err: `Error occurred in createPost. Check server logs for more details`,
+                },
+            });
+        }
+    },  
+    
+
     deletePost: async (req, res, next) => {
         const { id } = req.body;
     
         try {
-            const deleteQuery = 'DELETE FROM blog_posts WHERE id = $1';
-            
+            const deleteQuery = 'DELETE FROM blog_posts WHERE id = $1';     
             await db.query(deleteQuery, [id]);
-    
             res.status(200).json({ message: 'Post deleted successfully' });
         } catch (err) {
             next({
