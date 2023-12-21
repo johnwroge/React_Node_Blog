@@ -17,10 +17,17 @@ dotenv.config();
 app.use(express.static(path.join(__dirname, '../../client/dist')));
 
 
-
-
 app.get('/posts', postsController.getPosts, (req, res) => {
     return res.status(200).json(res.locals.posts);
+});
+app.post('/posts', postsController.createPost, (req, res) => {
+    return res.status(201).json(res.locals.posts);
+});
+app.put('/posts', postsController.updatePost, (req, res) => {
+    return res.status(200).json(res.locals.posts);
+});
+app.delete('/posts', postsController.deletePost, (req, res) => {
+    return res.status(res.statusCode).json(res.locals.posts);
 });
 
 app.listen(PORT, () => {
