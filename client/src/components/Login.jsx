@@ -1,12 +1,14 @@
 
 
 import React, {useState} from 'react'
+import './login.css'
 
 export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
   return (
+    <div className="login_outer_form">
     <form className="flex flex-col pt-5 pl-5 pr-5 space-y-3 shadow-lg shadow-black bg-slate-500 rounded-xl">
     <div>
       <p className="font-light text-gray-100">Email or username</p>
@@ -44,6 +46,7 @@ export default function Login() {
       </button>
     </div>
   </form>
+  </div>
   )
 }
 

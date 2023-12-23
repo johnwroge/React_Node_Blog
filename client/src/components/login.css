@@ -1,0 +1,5 @@
+.login_outer_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

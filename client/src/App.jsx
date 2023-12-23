@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
-
 import Login from './components/Login'
 import './App.css'
 import Navbar from './components/Navbar'
@@ -14,7 +13,6 @@ function App() {
     <BrowserRouter> 
       <Navbar />
         <Routes> 
-          
           <Route path = "/login" element = {<Login />}> </Route>
           <Route path = "/blog" element = {<Blog />}> </Route>
           <Route path = "/projects" element = {<Projects />}> </Route>

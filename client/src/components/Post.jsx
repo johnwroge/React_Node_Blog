@@ -13,7 +13,6 @@ const Post = ({title, date, description, img}) => {
   return (
     <div className={`Post ${isClicked ? 'clicked' : ''}`} onClick={handleClick}>
         <img src={img} />
-        
         <h3> {title} </h3>
         <p>{date}</p>
         <p> {description} </p>
